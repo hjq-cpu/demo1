@@ -261,6 +261,7 @@ a:hover {
 .content {
     padding: 21px 17px 17px 17px;
     height: 100%;
+    position: relative;
 }
 
 .content .echart-img {
@@ -402,4 +403,29 @@ a:hover {
 
 .weekend {
     padding: 0 10px;
+}
+.color-select {
+    position: absolute;
+    display: flex;
+    right: 71px;
+    top: -7vh;
+}
+.color-span{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 247, 225, 1);
+    margin-right: 0.5vw;
+}
+.color-span2{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: rgba(245, 166, 35, 1);
+    margin-right: 0.5vw;
+}
+.color-select span:last-of-type{
+    color: #fff;
+    font-size: 0.01rem;
+    margin-right: 0.5vw;
 }
