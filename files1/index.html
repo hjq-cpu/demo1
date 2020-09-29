@@ -1,0 +1,278 @@
+﻿<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>index</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <link rel="stylesheet" href="css/comon0.css">
+    <script src="https://webapi.amap.com/maps?v=1.4.15&key=71b940ea7be4f74217d57d435f125550值"></script>
+</head>
+<script>
+    /****/
+    $(document).ready(function () {
+        var whei = $(window).width()
+        $("html").css({
+            fontSize: whei / 20
+        })
+        $(window).resize(function () {
+            var whei = $(window).width()
+            $("html").css({
+                fontSize: whei / 20
+            })
+        });
+    });
+</script>
+<script type="text/javascript" src="js/echarts.min.js"></script>
+
+<body>
+    <div id="container" style="height: 100vh;width:100%;"></div>
+    <div class="bg-style">
+        <img src="images/alarmimg.png" alt="">
+        <img src="images/alarmimg.png" alt="">
+        <img src="images/alarmimg.png" alt="">
+        <img src="images/alarmimg.png" alt="">
+        <div class="text-module">
+            <p>警情信息</p>
+            <p class="p-span"><span>古交花都B区27号楼</span><span>2019-06-27 19:31:13</span></p>
+            <p>因一名患者饮酒呕吐后在医院抢救无效死亡，死者亲友纠集数十人到医院“讨说法”，包围了值班医生。</p>
+        </div>
+    </div>
+    <div class="head">
+        <div class="menu title1">
+            <img src="images/font1.png" alt="">
+            <img src="images/font2.png" alt="">
+            <img src="images/font3.png" alt="">
+        </div>
+        <div class="title title1">
+            <img class="badge" src="images/badge.png" alt="">舆情监测平台
+        </div>
+        <div class="weather title1">
+            <span id="showTime"></span>
+            <span class="weekend"></span>
+            <span class="daytime"></span>
+        </div>
+        <script>
+            var t = null;
+            t = setInterval(time, 1000); //開始运行
+            const array = ['一', '二', '三', '四', '五', '六', '日']
+            var dt = new Date();
+            var y = dt.getFullYear();
+            var mt = dt.getMonth() + 1;
+            var day = dt.getDate();
+            document.querySelector("span.weekend").innerHTML = "星期" + array[dt.getDay()];
+            document.querySelector("span.daytime").innerHTML = y + "年" + mt + "月" + day;
+            function time() {
+                clearTimeout(t); //清除定时器
+                dt = new Date();
+                var h = dt.getHours(); //获取时
+                var m = dt.getMinutes(); //获取分
+                var s = dt.getSeconds(); //获取秒
+                document.getElementById("showTime").innerHTML = h + ":" + m + ":" + s;
+                t = setTimeout(time, 1000); //设定定时器，循环运行     
+            }
+        </script>
+    </div>
+    <ul class="left_layout">
+        <!-- 左 盒子1 -->
+        <div class="data_1">
+            <div class="content">
+                <div class="row">
+                    <img class="frist-img" src="images/icon4.png" alt="">
+                    <div class="layout-flex">
+                        <span class="fontStyle1">今日警情</span>
+                        <span class="fontStyle2">140</span>
+                    </div>
+                    <div class="layout-flex">
+                        <span class="fontStyle1">同比增长率</span>
+                        <span class="fontStyle2">15%<img class="state-img" src="images/up.png" alt=""></span>
+                    </div>
+                    <div class="layout-flex">
+                        <span class="fontStyle1">环比增长率</span>
+                        <span class="fontStyle2">16%<img class="state-img" src="images/up.png" alt=""></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <img class="frist-img" src="images/icon3.png" alt="">
+                    <div class="layout-flex">
+                        <span class="fontStyle1">今日处警</span>
+                        <span class="fontStyle2">140</span>
+                    </div>
+                    <div class="layout-flex">
+                        <span class="fontStyle1">同比增长率</span>
+                        <span class="fontStyle2">15%<img class="state-img" src="images/down.png" alt="">
+                        </span>
+                    </div>
+                    <div class="layout-flex">
+                        <span class="fontStyle1">环比增长率</span>
+                        <span class="fontStyle2">16%<img class="state-img" src="images/down.png" alt=""></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <img class="frist-img" src="images/icon2.png" alt="">
+                    <div class="layout-flex">
+                        <span class="fontStyle1">近7日接警量</span>
+                        <span class="fontStyle2">140</span>
+                    </div>
+                    <div class="layout-flex">
+                        <span class="fontStyle1">同比增长率</span>
+                        <span class="fontStyle2">15%<img class="state-img" src="images/up.png" alt=""></span>
+                    </div>
+                    <div class="layout-flex">
+                        <span class="fontStyle1">环比增长率</span>
+                        <span class="fontStyle2">16%<img class="state-img" src="images/up.png" alt=""></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <img class="frist-img" src="images/icon1.png" alt="">
+                    <div class="layout-flex">
+                        <span class="fontStyle1">近7日处警量</span>
+                        <span class="fontStyle2">140</span>
+                    </div>
+                    <div class="layout-flex">
+                        <span class="fontStyle1">同比增长率</span>
+                        <span class="fontStyle2">15%<img class="state-img" src="images/up.png" alt=""></span>
+                    </div>
+                    <div class="layout-flex">
+                        <span class="fontStyle1">环比增长率</span>
+                        <span class="fontStyle2">16%<img class="state-img" src="images/up.png" alt=""></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 左 盒子2 -->
+        <div class="data_1">
+            <div class="content echart-layout">
+                <img class="echart-img" src="images/title/24himg.png" alt="">
+                <div class="echart-style" id="echart1"></div>
+            </div>
+        </div>
+        <!-- 左 盒子3 -->
+        <div class="data_1">
+            <div class="content echart-layout">
+                <img class="echart-img" src="images/title/7dayimg.png" alt="">
+                <div class="echart-style" id="echart2"></div>
+            </div>
+        </div>
+    </ul>
+    <ul class="right_layout">
+        <div class="data_1">
+            <div class="content echart-layout">
+                <img class="echart-img" src="images/title/Nowadaysimg.png" alt="">
+                <div>
+                    <p class="p-flex">
+                        <span>报警时间</span>
+                        <span>报警时间</span>
+                        <span>室由</span>
+                    </p>
+                    <ul class="scroll-list">
+                        <li class="message-text">
+                            <span>2020.09.01 10:26:26</span>
+                            <span>中三路入室抢劫</span>
+                            <span>盗窃</span>
+                        </li>
+                        <li class="message-text">
+                            <span>2020.09.01 10:26:26</span>
+                            <span>中三路入室抢劫</span>
+                            <span>盗窃</span>
+                        </li>
+                        <li class="message-text">
+                            <span>2020.09.01 10:26:26</span>
+                            <span>中三路入室抢劫</span>
+                            <span>盗窃</span>
+                        </li>
+                        <li class="message-text">
+                            <span>2020.09.01 10:26:26</span>
+                            <span>中三路入室抢劫</span>
+                            <span>盗窃</span>
+                        </li>
+                        <li class="message-text">
+                            <span>2020.09.01 10:26:26</span>
+                            <span>中三路入室抢劫</span>
+                            <span>盗窃</span>
+                        </li>
+                        <li class="message-text">
+                            <span>2020.09.01 10:26:26</span>
+                            <span>中三路入室抢劫</span>
+                            <span>盗窃</span>
+                        </li>
+                        <li class="message-text">
+                            <span>2020.09.01 10:26:26</span>
+                            <span>中三路入室抢劫</span>
+                            <span>盗窃</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="data_1">
+            <div class="content echart-layout">
+                <img class="echart-img" src="images/title/distributedimg.png" alt="">
+                <div>
+                    <p class="p-flex2">
+                        <span>单位名称</span>
+                        <span>当日警情</span>
+                        <span>近7天警情</span>
+                    </p>
+                    <ul class="scroll-list">
+                        <li class="message-style">
+                            <span>永安街派出所</span>
+                            <span>220</span>
+                            <span>487</span>
+                        </li>
+                        <li class="message-style">
+                            <span>永安街派出所</span>
+                            <span>256</span>
+                            <span>589</span>
+                        </li>
+                        <li class="message-style">
+                            <span>永安街派出所</span>
+                            <span>11</span>
+                            <span>784</span>
+                        </li>
+                        <li class="message-style">
+                            <span>永安街派出所</span>
+                            <span>26</span>
+                            <span>598</span>
+                        </li>
+                        <li class="message-style">
+                            <span>永安街派出所</span>
+                            <span>185</span>
+                            <span>698</span>
+                        </li>
+                        <li class="message-style">
+                            <span>永安街派出所</span>
+                            <span>256</span>
+                            <span>487</span>
+                        </li>
+                        <li class="message-style">
+                            <span>永安街派出所</span>
+                            <span>165</span>
+                            <span>211</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="data_1">
+            <div class="content echart-layout">
+                <img class="echart-img" src="images/title/statisticsimg.png" alt="">
+                <div class="echart-style" id="echart3"></div>
+            </div>
+        </div>
+    </ul>
+    <script language="JavaScript" src="js/js.js"></script>
+    <script>
+        var map = new AMap.Map('container', {
+            viewMode: '3D',//使用3D视图
+            mapStyle: 'amap://styles/whitesmoke', //设置地图的显示样式
+            center: [114.266684, 30.592003],//中心点坐标
+            zoom: 18,
+            pitch: 75, // 地图俯仰角度，有效范围 0 度- 83 度
+            zoomEnable: false,
+            dragEnable: false,
+        });
+    </script>
+</body>
+
+</html>

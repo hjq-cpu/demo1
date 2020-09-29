@@ -1,0 +1,405 @@
+﻿@charset "utf-8";
+:root {
+    --boxColor: rgba(0, 0, 0, 0.4);
+    --font1: 0.1rem;
+    --font2: 0.2rem;
+    --font3: 12px;
+}
+
+/* CSS Document */
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+*, body {
+    padding: 0px;
+    margin: 0px;
+    font-family: "微软雅黑";
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: electronicFont;
+    src: url(../font/DS-DIGIT.TTF)
+}
+
+body {
+    position: relative;
+    /* padding: .2rem; */
+    background-color: #0C161E;
+    color: #4AFBFE;
+}
+
+li {
+    list-style-type: none;
+}
+
+i {
+    margin: 0px;
+    padding: 0px;
+    text-indent: 0px;
+}
+
+img {
+    border: none;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #399bff;
+}
+
+a.active, a:focus {
+    outline: none!important;
+    text-decoration: none;
+}
+
+ol, ul, p, h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0
+}
+
+a:hover {
+    color: #06c;
+    text-decoration: none!important
+}
+
+.clearfix:after, .clearfix:before {
+    display: table;
+    content: " "
+}
+
+.clearfix:after {
+    clear: both
+}
+
+/*谷哥滚动条样式*/
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    position: absolute
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #5bc0de
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ddd
+}
+
+#mapContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.bg-style {
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 1) 100%);
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+}
+
+.bg-style img {
+    position: absolute;
+    width: 48px;
+    height: 77px;
+    cursor: pointer;
+}
+
+.bg-style img:nth-of-type(1) {
+    top: 16vh;
+    left: 48vw;
+}
+
+.bg-style img:nth-of-type(2) {
+    top: 48vh;
+    left: 42vw;
+}
+
+.bg-style img:nth-of-type(3) {
+    top: 69vh;
+    left: 34vw;
+}
+
+.bg-style img:nth-of-type(4) {
+    top: 74vh;
+    left: 59vw;
+}
+
+.text-module {
+    background-image: url(../images/alarboxmimg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 587px;
+    height: 216px;
+    position: absolute;
+    top: 31vh;
+    left: 33.5vw;
+}
+
+.text-module p:nth-of-type(1) {
+    font-size: 24px;
+    font-family: MicrosoftYaHei-Bold, MicrosoftYaHei;
+    font-weight: bold;
+    color: #FFFFFF;
+    position: absolute;
+    top: 31px;
+    left: 190px;
+}
+
+.p-span {
+    position: absolute;
+    top: 71px;
+    left: 190px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.p-span span:nth-of-type(1) {
+    font-size: 20px;
+    font-family: MicrosoftYaHei;
+    color: #FF400C;
+    line-height: 27px;
+    padding-right: 21px;
+}
+
+.p-span span:nth-of-type(2) {
+    font-size: 16px;
+    font-family: MicrosoftYaHei;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 21px;
+}
+
+.text-module p:nth-of-type(3) {
+    font-size: 16px;
+    font-family: MicrosoftYaHei;
+    color: #FFFFFF;
+    position: absolute;
+    top: 107px;
+    left: 190px;
+}
+
+.head {
+    z-index: 5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 81px;
+    background-image: url(../images/head_bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .25rem;
+}
+
+.head .title1 {
+    width: 30%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+}
+
+.title1:first-of-type {
+    justify-content: space-between;
+    padding-left: 118px;
+}
+
+.badge {
+    width: 41px;
+    height: 43px;
+    margin-right: 10px;
+}
+
+.left_layout {
+    position: absolute;
+    top: 93px;
+    height: calc(100% - 93px);
+    left: 16px;
+}
+
+.right_layout {
+    position: absolute;
+    top: 93px;
+    height: calc(100% - 93px);
+    right: 16px;
+    overflow: hidden;
+}
+
+.data_1 {
+    background-color: var(--boxColor);
+    height: 28vh;
+    width: 25vw;
+    overflow: hidden;
+}
+
+.data_1:nth-of-type(2) {
+    margin-top: 18px;
+}
+
+.data_1:nth-of-type(3) {
+    margin-top: 18px;
+}
+
+.content {
+    padding: 21px 17px 17px 17px;
+    height: 100%;
+}
+
+.content .echart-img {
+    height: 36px;
+    width: 100%;
+}
+
+.echart-style {
+    width: 100%;
+    height: 23vh;
+}
+
+.echart-layout {
+    display: flex;
+    flex-direction: column;
+}
+
+.data_1 .row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.1vh;
+}
+
+.row:first-of-type {
+    margin: 0;
+}
+
+.frist-img {
+    width: 2vw;
+    height: 4.2vh;
+}
+
+.loading {
+    position: fixed;
+    left: 0;
+    top: 0;
+    font-size: 18px;
+    z-index: 100000000;
+    width: 100%;
+    height: 100%;
+    background: #1a1a1c;
+    text-align: center;
+}
+
+.menu img {
+    width: 92px;
+    height: 31px;
+    cursor: pointer;
+}
+
+.fontStyle1 {
+    font-size: var(--font1);
+    color: #AEC7DD;
+}
+
+.fontStyle2 {
+    font-size: var(--font2);
+    color: #fff;
+}
+
+.layout-flex {
+    display: flex;
+    flex-direction: column;
+    width: 6vw;
+}
+
+.fontStyle2 .state-img {
+    height: 3vh;
+    width: 1vw;0
+}
+
+.p-flex, .p-flex2 {
+    display: flex;
+    justify-content: space-between;
+    color: rgba(255, 64, 12, 1);
+    font-size: var(--font3);
+    padding-left: 10px;
+}
+
+.message-text, .message-style {
+    padding-left: 10px;
+}
+
+.message-text span:nth-of-type(1), .p-flex span:nth-of-type(1) {
+    width: 114px;
+}
+
+.message-text span:nth-of-type(2), .p-flex span:nth-of-type(2) {
+    width: 132px;
+}
+
+.message-text span:nth-of-type(3), .p-flex span:nth-of-type(3) {
+    width: 24px;
+}
+
+.message-style span:nth-of-type(1), .p-flex2 span:nth-of-type(1) {
+    width: 96px;
+}
+
+.message-style span:nth-of-type(2), .p-flex2 span:nth-of-type(2) {
+    width: 48px;
+}
+
+.message-style span:nth-of-type(3), .p-flex2 span:nth-of-type(3) {
+    width: 66px;
+}
+
+.scroll-list li {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--font3);
+    color: #fff;
+    height: 28px;
+    line-height: 28px;
+}
+
+.scroll-list li:nth-child(even) {
+    background-color: rgba(255, 247, 225, 0.2);
+}
+
+#showTime {
+    font-size: 24px;
+    font-family: TruenoRg;
+    color: #FFFFFF;
+    line-height: 29px;
+}
+
+.weather {
+    display: flex;
+    align-items: center;
+}
+
+.weekend, .daytime {
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+.weekend {
+    padding: 0 10px;
+}
